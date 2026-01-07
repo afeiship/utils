@@ -8,11 +8,13 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
+    "release": "release-it",
     "test:watch": "vitest",
     "gen:toolkit": "tsx scripts/generate-es-toolkit.ts"
   },
