@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm test:run)",
+      "Bash(pnpm vitest run:*)",
+      "Bash(npx vitest run:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm install:*)",
+      "Bash(cat:*)",
+      "Bash(pnpm test:run:*)"
+    ]
+  }
+}

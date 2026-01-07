@@ -1,5 +1,32 @@
 {
-  "name": "rails-module-act-as-taggable",
+  "name": "@jswork/utils",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {}
+  "type": "module",
+  "description": "Cross-platform JavaScript utilities, safely usable in any runtime.",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gen:toolkit": "tsx scripts/generate-es-toolkit.ts"
+  },
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "globby": "^16.1.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.43.0"
+  }
 }
