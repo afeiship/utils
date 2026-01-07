@@ -1,7 +1,6 @@
 {
   "name": "@jswork/utils",
   "version": "1.0.2",
-  "private": true,
   "type": "module",
   "description": "Cross-platform JavaScript utilities, safely usable in any runtime.",
   "license": "MIT",
@@ -30,5 +29,8 @@
   },
   "dependencies": {
     "es-toolkit": "^1.43.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
