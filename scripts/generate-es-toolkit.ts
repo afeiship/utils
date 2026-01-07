@@ -6,7 +6,7 @@ import { resolve, dirname } from "path";
 const require = createRequire(import.meta.url);
 
 // === 配置区 ===
-const OUTPUT_DIR = resolve(process.cwd(), "src");
+const OUTPUT_DIR = resolve(process.cwd(), "src/toolkit");
 const MODULES = [
   { name: "array", path: "es-toolkit/array" },
   { name: "object", path: "es-toolkit/object" },
