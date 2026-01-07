@@ -1,6 +1,6 @@
 {
   "name": "@jswork/utils",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "type": "module",
   "description": "Cross-platform JavaScript utilities, safely usable in any runtime.",
   "license": "MIT",
@@ -31,6 +31,7 @@
     "es-toolkit": "^1.43.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
