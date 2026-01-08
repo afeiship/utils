@@ -1,0 +1,39 @@
+name: Publish on Tag
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'  # 匹配 v1.0.0, v2.1.0-beta.1 等
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 用于创建 GitHub Release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 需要完整历史生成 changelog（如果用 conventional-changelog）
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm ci
+
+      # 方式一：直接 npm publish（最简单）
+      # - name: Publish to npm
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 方式二（可选）：用 release-it --ci 发布（如果你 CI 也需要生成 GitHub Release）
+      - name: Install release-it
+        run: npm install -g release-it
+      - name: Create Release and Publish
+        run: release-it --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
