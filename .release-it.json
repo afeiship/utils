@@ -11,6 +11,10 @@
       "npm run build"
     ]
   },
+  "npm": {
+    "publish": true,
+    "token": "${NPM_TOKEN}"
+  },
   "github": {
     "release": true
   }

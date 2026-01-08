@@ -32,6 +32,12 @@ jobs:
       # 方式二（可选）：用 release-it --ci 发布（如果你 CI 也需要生成 GitHub Release）
       - name: Install release-it
         run: npm install -g release-it
+      - name: Configure npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create Release and Publish
         run: release-it --ci
         env:
