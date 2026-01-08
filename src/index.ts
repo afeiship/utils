@@ -1,3 +1,5 @@
+// es-toolkit entry files:
+
 export * from './toolkit/array';
 export * from './toolkit/object';
 export * from './toolkit/function';
