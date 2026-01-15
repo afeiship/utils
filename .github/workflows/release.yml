@@ -40,5 +40,5 @@ jobs:
       - name: Create Release and Publish
         run: release-it --ci
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
